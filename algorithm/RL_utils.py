@@ -166,7 +166,5 @@ def train_on_policy_agent(env, agent, n_step, num_episode, replay, alpha, beta):
         recorder.write(str(re) + "\n")
         i_recorder.close()
         torch.save(agent, "../models/AC/model_after_" + str(i_episode) + "_episode.pth")
-        torch.save(env, "../models/Environment/env_after_" + str(i_episode) + "_episode.pth")
-        torch.save(replay, "../models/Buffer/buffer_after_" + str(i_episode) + "_episode.pth")
     recorder.close()
     return step_reward_list, episode_reward_list
